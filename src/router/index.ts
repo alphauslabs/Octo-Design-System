@@ -41,6 +41,16 @@ const router = createRouter({
       path: '/components/dialog',
       name: 'Dialog',
       component: () => import('@/views/components/Dialog.vue')
+    },
+    {
+      path: '/components/alerts',
+      name: 'Alerts',
+      component: () => import('@/views/components/Alerts.vue')
+    },
+    {
+      path: '/components/banners',
+      name: 'Banners',
+      component: () => import('@/views/components/Banners.vue')
     }
   ]
 })

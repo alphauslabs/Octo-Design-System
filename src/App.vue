@@ -155,6 +155,16 @@ const componentItems = [
     title: 'Dialog',
     path: '/components/dialog',
     icon: 'mdi-format-list-bulleted'
+  },
+  {
+    title: 'Alerts',
+    path: '/components/alerts',
+    icon: 'mdi-alert-circle-outline'
+  },
+  {
+    title: 'Banners',
+    path: '/components/banners',
+    icon: 'mdi-message-alert-outline'
   }
 ]
 
