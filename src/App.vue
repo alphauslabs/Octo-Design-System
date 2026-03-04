@@ -149,12 +149,12 @@ const componentItems = [
   {
     title: 'Chip',
     path: '/components/chips',
-    icon: 'mdi-format-list-bulleted'
+    icon: 'mdi-label-outline'
   },
   {
     title: 'Dialog',
     path: '/components/dialog',
-    icon: 'mdi-format-list-bulleted'
+    icon: 'mdi-window-maximize'
   },
   {
     title: 'Alerts',
@@ -165,6 +165,21 @@ const componentItems = [
     title: 'Banners',
     path: '/components/banners',
     icon: 'mdi-message-alert-outline'
+  },
+  {
+    title: 'Cards',
+    path: '/components/cards',
+    icon: 'mdi-card-outline'
+  },
+  {
+    title: 'Card Patterns',
+    path: '/components/card-patterns',
+    icon: 'mdi-view-grid-outline'
+  },
+  {
+    title: 'Card Templates',
+    path: '/components/card-templates',
+    icon: 'mdi-file-document-outline'
   }
 ]
 

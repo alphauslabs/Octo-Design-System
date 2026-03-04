@@ -51,6 +51,21 @@ const router = createRouter({
       path: '/components/banners',
       name: 'Banners',
       component: () => import('@/views/components/Banners.vue')
+    },
+    {
+      path: '/components/cards',
+      name: 'Cards',
+      component: () => import('@/views/components/Cards.vue')
+    },
+    {
+      path: '/components/card-patterns',
+      name: 'CardPatterns',
+      component: () => import('@/views/components/CardPatterns.vue')
+    },
+    {
+      path: '/components/card-templates',
+      name: 'CardTemplates',
+      component: () => import('@/views/components/CardTemplates.vue')
     }
   ]
 })
