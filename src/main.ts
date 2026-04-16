@@ -7,7 +7,13 @@ import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import 'vuetify/styles'
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import '@mdi/font/css/materialdesignicons.css'
+
+// Vendor Icons
+import IconAws from './components/icons/IconAws.vue'
+import IconGcp from './components/icons/IconGcp.vue'
+import IconAzure from './components/icons/IconAzure.vue'
 
 // Global design system styles
 import './assets/design-system.css'
@@ -27,6 +33,19 @@ const vuetify = createVuetify({
     themes: {
       light: { colors: allColors.light },
       dark: { dark: true, colors: allColors.dark }
+    }
+  },
+  icons: {
+    defaultSet: 'mdi',
+    sets: {
+      mdi
+    },
+    aliases: {
+      ...aliases,
+      aws: IconAws,
+      gcp: IconGcp,
+      azure: IconAzure,
+      azureea: IconAzure
     }
   },
   defaults: {

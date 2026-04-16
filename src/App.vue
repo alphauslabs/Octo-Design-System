@@ -180,6 +180,11 @@ const componentItems = [
     title: 'Card Templates',
     path: '/components/card-templates',
     icon: 'mdi-file-document-outline'
+  },
+  {
+    title: 'Tables',
+    path: '/components/tables',
+    icon: 'mdi-table'
   }
 ]
 

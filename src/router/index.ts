@@ -66,6 +66,11 @@ const router = createRouter({
       path: '/components/card-templates',
       name: 'CardTemplates',
       component: () => import('@/views/components/CardTemplates.vue')
+    },
+    {
+      path: '/components/tables',
+      name: 'Tables',
+      component: () => import('@/views/components/Tables.vue')
     }
   ]
 })
