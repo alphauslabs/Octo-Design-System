@@ -28,9 +28,9 @@ const router = createRouter({
       component: () => import('@/views/foundations/Spacing.vue')
     },
     {
-      path: '/components/custom-list-item',
-      name: 'CustomListItem',
-      component: () => import('@/views/components/CustomListItemPage.vue')
+      path: '/components/advance-list-item',
+      name: 'AdvanceListItem',
+      component: () => import('@/views/components/AdvanceListItemPage.vue')
     },
     {
       path: '/components/chips',
@@ -71,6 +71,17 @@ const router = createRouter({
       path: '/components/tables',
       name: 'Tables',
       component: () => import('@/views/components/Tables.vue')
+    },
+    // Audit Pages (Temporary)
+    {
+      path: '/audit/colors',
+      name: 'ColorAudit',
+      component: () => import('@/views/ColorAudit.vue')
+    },
+    {
+      path: '/audit/typography',
+      name: 'TypographyAudit',
+      component: () => import('@/views/TypographyAudit.vue')
     }
   ]
 })

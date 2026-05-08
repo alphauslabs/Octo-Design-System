@@ -75,6 +75,21 @@
           color="primary"
         />
 
+        <!-- Audit Section (Temporary) -->
+        <v-list-subheader class="text-uppercase text-caption font-weight-bold text-medium-emphasis mb-2 mt-6">
+          Audits
+        </v-list-subheader>
+
+        <v-list-item
+          v-for="item in auditItems"
+          :key="item.path"
+          :to="item.path"
+          :title="item.title"
+          :prepend-icon="item.icon"
+          class="mb-1 rounded-lg"
+          color="primary"
+        />
+
         <!-- Resources Section -->
         <v-list-subheader class="text-uppercase text-caption font-weight-bold text-medium-emphasis mb-2 mt-6">
           Resources
@@ -142,8 +157,8 @@ const foundationsItems = [
 
 const componentItems = [
   {
-    title: 'Custom List Item',
-    path: '/components/custom-list-item',
+    title: 'Advance List Item',
+    path: '/components/advance-list-item',
     icon: 'mdi-format-list-bulleted'
   },
   {
@@ -185,6 +200,19 @@ const componentItems = [
     title: 'Tables',
     path: '/components/tables',
     icon: 'mdi-table'
+  }
+]
+
+const auditItems = [
+  {
+    title: 'Color Audit',
+    path: '/audit/colors',
+    icon: 'mdi-palette-swatch-variant'
+  },
+  {
+    title: 'Typography Audit',
+    path: '/audit/typography',
+    icon: 'mdi-format-size'
   }
 ]
 
