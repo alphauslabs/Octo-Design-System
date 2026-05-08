@@ -1,44 +1,134 @@
-export const lightThemeColors = {
-  // New
-  background: '#FCFCFC',
-  'on-background': '#232225',
-  surface: '#F7F7F7',
-  'on-surface': '#232225',
-  primary: '#5E53A7',
-  'on-primary': '#E5DFFF',
-  secondary: '#5F5C71',
-  'on-secondary': '#F7F7F7',
-  success: '#39962B',
-  error: '#EC4746',
-  warning: '#AE7A00',
-  info: '#0086E7',
-  mute: '#6C6A6F',
-  'surface-variant': '#2F2F32',
-  'on-surface-variant': '#F7F7F7',
-  'surface-light': '#E8E8E8', // surface high
-  'surface-bright': '#C9C9C9' // surface highest
+// Base color palettes from Figma design system
+// These match the Tailwind-style naming (50-950/1000)
+export const colorPalettes = {
+  neutral: {
+    50: '#FCFCFC',
+    100: '#F7F7F7',
+    200: '#F2F2F2',
+    300: '#E8E8E8',
+    400: '#C9C9C9',
+    500: '#9E9D9F',
+    600: '#6B696D',
+    700: '#55535A',
+    800: '#3E3D42',
+    900: '#2F2F32',
+    950: '#232225',
+    1000: '#121115'
+  },
+  red: {
+    50: '#FFDAD7',
+    100: '#FFC7C3',
+    200: '#FFB3AE',
+    300: '#FF8982',
+    400: '#EC4746',
+    500: '#B82025',
+    600: '#930012',
+    700: '#7E000D',
+    800: '#540006',
+    900: '#2D1513'
+  },
+  green: {
+    50: '#CBFFB6',
+    100: '#8CEB74',
+    200: '#7DDB67',
+    300: '#63C04F',
+    400: '#39962B',
+    500: '#056F00',
+    600: '#035300',
+    700: '#014600',
+    800: '#012D00',
+    900: '#001600'
+  },
+  yellow: {
+    50: '#FFDEAB',
+    100: '#FFCD73',
+    200: '#FFBA23',
+    300: '#E09F00',
+    400: '#AE7A00',
+    500: '#735C00',
+    600: '#574500',
+    700: '#493A00',
+    800: '#2F2400',
+    900: '#171000'
+  },
+  blue: {
+    50: '#D3E4FF',
+    100: '#BAD7FF',
+    200: '#A0C9FF',
+    300: '#69AEFF',
+    400: '#0086E7',
+    500: '#0060A7',
+    600: '#004881',
+    700: '#003D6D',
+    800: '#002648',
+    900: '#001226'
+  },
+  purple: {
+    50: '#E5DFFF',
+    100: '#D6CFFF',
+    200: '#C8C0FF',
+    300: '#ABA0FB',
+    400: '#8479D0',
+    500: '#5E53A7',
+    600: '#453A8E',
+    700: '#3A2E82',
+    800: '#23136B',
+    900: '#190262',
+    950: '#0F0047'
+  },
+  purpleDark: {
+    50: '#E5DFF9',
+    100: '#D7D1EA',
+    200: '#C9C3DC',
+    300: '#ADA8C0',
+    400: '#858198',
+    500: '#5F5C71',
+    600: '#474459',
+    700: '#3C394D',
+    800: '#262336',
+    900: '#1C192C',
+    950: '#110E21'
+  }
+}
 
+export const lightThemeColors = {
+  background: colorPalettes.neutral[50],
+  'on-background': colorPalettes.neutral[950],
+  surface: colorPalettes.neutral[100],
+  'on-surface': colorPalettes.neutral[950],
+  primary: colorPalettes.purple[500],
+  'on-primary': colorPalettes.purple[50],
+  secondary: colorPalettes.purpleDark[500],
+  'on-secondary': colorPalettes.purpleDark[50],
+  success: colorPalettes.green[400],
+  error: colorPalettes.red[400],
+  warning: colorPalettes.yellow[400],
+  info: colorPalettes.blue[400],
+  mute: colorPalettes.neutral[600], // #6B696D (was #6C6A6F)
+  'surface-variant': colorPalettes.neutral[900],
+  'on-surface-variant': colorPalettes.neutral[100],
+  'surface-light': colorPalettes.neutral[300],
+  'surface-bright': colorPalettes.neutral[400]
 }
 
 export const darkThemeColors = {
-  // New
-  background: '#121115',
-  'on-background': '#F7F7F7',
-  surface: '#232225',
-  'on-surface': '#F7F7F7',
-  primary: '#ABA0FB',
-  'on-primary': '#23136B',
-  secondary: '#ADA8C0',
-  'on-secondary': '#262336',
-  success: '#7DDB67',
-  error: '#FFB3AE',
-  warning: '#FFBA23',
-  info: '#A0C9FF',
-  mute: '#ADAAB0',
-  'surface-variant': '#F7F7F7',
-  'on-surface-variant': '#232225',
-  'surface-light': '#2F2F32', // surface high
-  'surface-bright': '#3E3D42' // surface highest
+  background: colorPalettes.neutral[1000],
+  'on-background': colorPalettes.neutral[100],
+  surface: colorPalettes.neutral[950],
+  'on-surface': colorPalettes.neutral[100],
+  primary: colorPalettes.purple[300],
+  'on-primary': colorPalettes.purple[800],
+  secondary: colorPalettes.purpleDark[300],
+  'on-secondary': colorPalettes.purpleDark[800],
+  success: colorPalettes.green[200],
+  error: colorPalettes.red[200],
+  warning: colorPalettes.yellow[200],
+  info: colorPalettes.blue[200],
+  mute: colorPalettes.purpleDark[400], // #ADA8C0 (was #ADAAB0 - close to secondary)
+  'surface-variant': colorPalettes.neutral[100],
+  'on-surface-variant': colorPalettes.neutral[950],
+  'surface-light': colorPalettes.neutral[900],
+  'surface-bright': colorPalettes.neutral[800]
 }
 
 export const extraColors = {
@@ -107,7 +197,25 @@ export const vendorColors = {
   }
 }
 
+// Flatten color palettes for direct access (e.g., 'neutral-50', 'purple-300')
+const flattenedPalettes = Object.entries(colorPalettes).reduce((acc, [name, shades]) => {
+  Object.entries(shades).forEach(([shade, hex]) => {
+    acc[`${name}-${shade}`] = hex
+  })
+  return acc
+}, {} as Record<string, string>)
+
 export const allColors = {
-  light: { ...lightThemeColors, ...extraColors.light, ...vendorColors.light },
-  dark: { ...darkThemeColors, ...extraColors.dark, ...vendorColors.dark }
+  light: {
+    ...lightThemeColors,
+    ...extraColors.light,
+    ...vendorColors.light,
+    ...flattenedPalettes
+  },
+  dark: {
+    ...darkThemeColors,
+    ...extraColors.dark,
+    ...vendorColors.dark,
+    ...flattenedPalettes
+  }
 }
