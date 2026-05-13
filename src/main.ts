@@ -21,6 +21,9 @@ import './assets/design-system.css'
 // Design tokens - using Octo's exact color system
 import { allColors } from './tokens'
 
+// Custom typography system
+import { injectTypographyStyles } from './plugins/vuetifyCustomTypography'
+
 // Blueprint
 import { md3 } from 'vuetify/blueprints'
 
@@ -71,6 +74,9 @@ const vuetify = createVuetify({
     VOverlay: { scrim: 'surface' }
   }
 })
+
+// Inject custom typography styles
+injectTypographyStyles()
 
 const app = createApp(App)
 app.use(router)

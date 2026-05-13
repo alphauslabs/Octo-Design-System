@@ -1,16 +1,16 @@
 <template>
     <div>
         <div class="mb-8">
-            <h1 class="text-h4 font-weight-bold mb-4">Dialog</h1>
-            <p class="text-body-1 mb-6">
+            <h1 class="text-2xl font-weight-bold mb-4">Dialog</h1>
+            <p class="text-base mb-6">
                 About dialog component
             </p>
         </div>
 
         <!-- Confirmational dialog -->
         <div class="mb-8">
-            <h2 class="text-h5 font-weight-medium mb-4">Confirmation dialogs</h2>
-            <p class="text-body-2 mb-4 text-medium-emphasis">
+            <h2 class="text-2xl font-weight-medium mb-4">Confirmation dialogs</h2>
+            <p class="text-sm mb-4 text-medium-emphasis">
                 A confirmation message will be shown before user can execute any actions
             </p>
 
@@ -18,7 +18,7 @@
             <v-card class="mb-4">
                 <v-card-text>
                     <div class="mb-4">
-                        <p class="text-caption font-weight-medium mb-2">Colors (variant="tonal")</p>
+                        <p class="text-xs font-weight-medium mb-2">Colors (variant="tonal")</p>
                         <v-btn color="error" variant="tonal" @click="confirmationDialogDemo = true">
                             Open Confirmation Demo
                         </v-btn>
@@ -27,18 +27,18 @@
             </v-card>
             
             <!-- Dialog code -->
-            <v-dialog v-model="confirmationDialogDemo" width="400">
+            <v-dialog v-model="confirmationDialogDemo" width="400" persistent>
                 <v-card rounded="xl">
-                    <div class="d-flex justify-center pt-4">
-                        <v-icon icon="mdi-alert-circle" color="error" size="64"></v-icon>
+                    <!-- Title & Message -->
+                    <div class="d-flex flex-column pa-6">
+                        <p class="text-xl font-weight-medium mb-2">Delete item</p>
+                        <p class="text-base message-text">Are you sure you want to delete this item? This action cannot be undone.</p>
                     </div>
-                    <v-sheet class="d-flex flex-column text-center pa-4">
-                        <p class="text-h6">Delete item</p>
-                        <p class="text-body-1">Are you sure you want to delete this item? This action cannot be undone.</p>
-                    </v-sheet>
+
+                    <!-- Actions: Flexible equal width buttons (confirm takes priority if text is longer) -->
                     <v-card-actions class="pa-4 ga-2">
-                        <v-btn class="flex-grow-1" prepend-icon="mdi-close" variant="tonal" @click="confirmationDialogDemo = false">Cancel</v-btn>
-                        <v-btn class="flex-grow-1" prepend-icon="mdi-trash-can" variant="flat" color="error" @click="confirmationDialogDemo = false">Delete</v-btn>
+                        <v-btn class="confirm-cancel-btn" variant="tonal" @click="confirmationDialogDemo = false">Cancel</v-btn>
+                        <v-btn class="confirm-primary-btn" variant="flat" color="error" @click="confirmationDialogDemo = false">Delete</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-dialog>
@@ -54,7 +54,7 @@
                     <v-expand-transition>
                         <div v-if="showDisplayCode">
                             <v-divider />
-                            <pre class="pa-4 text-caption code-block" v-html="highlightedDisplayCode"></pre>
+                            <pre class="pa-4 text-xs code-block" v-html="highlightedDisplayCode"></pre>
                         </div>
                     </v-expand-transition>
                 </v-card-text>
@@ -63,8 +63,8 @@
 
         <!-- Form Modal Dialog -->
         <div class="mb-8">
-            <h2 class="text-h5 font-weight-medium mb-4">Medium size dialogs</h2>
-            <p class="text-body-2 mb-4 text-medium-emphasis">
+            <h2 class="text-2xl font-weight-medium mb-4">Medium size dialogs</h2>
+            <p class="text-sm mb-4 text-medium-emphasis">
                 A 560px width form dialog with header, content area, and action buttons. Suitable for forms with multiple fields and complex actions.
             </p>
 
@@ -72,7 +72,7 @@
             <v-card class="mb-4">
                 <v-card-text>
                     <div class="mb-4">
-                        <p class="text-caption font-weight-medium mb-2">Medium dialog (560px width)</p>
+                        <p class="text-xs font-weight-medium mb-2">Medium dialog (560px width)</p>
                         <v-btn color="primary" variant="tonal" @click="formDialogDemo = true">
                             Open Medium Dialog
                         </v-btn>
@@ -85,7 +85,7 @@
                 <v-card rounded="xl">
                     <v-card-title class="d-flex align-center py-4 pr-3 pl-6">
                         <v-icon icon="mdi-account-edit" class="mr-3" />
-                        <span class="text-h5">Edit Profile</span>
+                        <span class="text-2xl">Edit Profile</span>
                         <v-spacer />
                         <v-chip prepend-icon="mdi-book-open-variant" rounded="lg" color="secondary" variant="tonal" size="small" density="default">
                             Read about how this optimization works
@@ -123,7 +123,7 @@
                     <v-expand-transition>
                         <div v-if="showFormCode">
                             <v-divider />
-                            <pre class="pa-4 text-caption code-block" v-html="highlightedFormCode"></pre>
+                            <pre class="pa-4 text-xs code-block" v-html="highlightedFormCode"></pre>
                         </div>
                     </v-expand-transition>
                 </v-card-text>
@@ -132,8 +132,8 @@
 
         <!-- Large Dialog -->
         <div class="mb-8">
-            <h2 class="text-h5 font-weight-medium mb-4">Large dialogs</h2>
-            <p class="text-body-2 mb-4 text-medium-emphasis">
+            <h2 class="text-2xl font-weight-medium mb-4">Large dialogs</h2>
+            <p class="text-sm mb-4 text-medium-emphasis">
                 An 800px width dialog for complex forms with multiple sections or detailed content.
             </p>
 
@@ -141,7 +141,7 @@
             <v-card class="mb-4">
                 <v-card-text>
                     <div class="mb-4">
-                        <p class="text-caption font-weight-medium mb-2">Large dialog (800px width)</p>
+                        <p class="text-xs font-weight-medium mb-2">Large dialog (800px width)</p>
                         <v-btn color="primary" variant="tonal" @click="largeDialogDemo = true">
                             Open Large Dialog
                         </v-btn>
@@ -154,7 +154,7 @@
                 <v-card rounded="xl">
                     <v-card-title class="d-flex align-center py-4 pr-3 pl-6">
                         <v-icon icon="mdi-cog" class="mr-3" />
-                        <span class="text-h5">Settings</span>
+                        <span class="text-2xl">Settings</span>
                         <v-spacer />
                         <v-btn icon="$close" variant="text" @click="largeDialogDemo = false" />
                     </v-card-title>
@@ -163,13 +163,13 @@
 
                     <v-card-text class="pa-6">
                         <div class="mb-6">
-                            <h3 class="text-h6 mb-4">Account Settings</h3>
+                            <h3 class="text-xl mb-4">Account Settings</h3>
                             <v-text-field label="Username" placeholder="Enter username" class="mb-4" />
                             <v-text-field label="Email" placeholder="Enter email" class="mb-4" />
                             <v-text-field label="Phone" placeholder="Enter phone number" />
                         </div>
                         <div class="mb-6">
-                            <h3 class="text-h6 mb-4">Preferences</h3>
+                            <h3 class="text-xl mb-4">Preferences</h3>
                             <v-select label="Language" :items="['English', 'Japanese', 'Chinese']" class="mb-4" />
                             <v-select label="Timezone" :items="['UTC', 'JST', 'PST']" class="mb-4" />
                             <v-select label="Theme" :items="['Light', 'Dark', 'Auto']" />
@@ -202,7 +202,7 @@
                     <v-expand-transition>
                         <div v-if="showLargeCode">
                             <v-divider />
-                            <pre class="pa-4 text-caption code-block" v-html="highlightedLargeCode"></pre>
+                            <pre class="pa-4 text-xs code-block" v-html="highlightedLargeCode"></pre>
                         </div>
                     </v-expand-transition>
                 </v-card-text>
@@ -211,8 +211,8 @@
 
         <!-- X-Large Dialog -->
         <div class="mb-8">
-            <h2 class="text-h5 font-weight-medium mb-4">X-Large dialogs</h2>
-            <p class="text-body-2 mb-4 text-medium-emphasis">
+            <h2 class="text-2xl font-weight-medium mb-4">X-Large dialogs</h2>
+            <p class="text-sm mb-4 text-medium-emphasis">
                 A 1000px width dialog for comprehensive forms with multi-column layouts or extensive content.
             </p>
 
@@ -220,7 +220,7 @@
             <v-card class="mb-4">
                 <v-card-text>
                     <div class="mb-4">
-                        <p class="text-caption font-weight-medium mb-2">X-Large dialog (1000px width)</p>
+                        <p class="text-xs font-weight-medium mb-2">X-Large dialog (1000px width)</p>
                         <v-btn color="primary" variant="tonal" @click="xlargeDialogDemo = true">
                             Open X-Large Dialog
                         </v-btn>
@@ -233,7 +233,7 @@
                 <v-card rounded="xl">
                     <v-card-title class="d-flex align-center py-4 pr-3 pl-6">
                         <v-icon icon="mdi-file-document-edit" class="mr-3" />
-                        <span class="text-h5">Create New Project</span>
+                        <span class="text-2xl">Create New Project</span>
                         <v-spacer />
                         <v-btn icon="$close" variant="text" @click="xlargeDialogDemo = false" />
                     </v-card-title>
@@ -243,14 +243,14 @@
                     <v-card-text class="pa-6">
                         <v-row>
                             <v-col cols="6">
-                                <h3 class="text-h6 mb-4">Project Details</h3>
+                                <h3 class="text-xl mb-4">Project Details</h3>
                                 <v-text-field label="Project Name" placeholder="Enter project name" class="mb-4" />
                                 <v-text-field label="Project Code" placeholder="Enter project code" class="mb-4" />
                                 <v-select label="Category" :items="['Development', 'Design', 'Marketing']" class="mb-4" />
                                 <v-select label="Priority" :items="['Low', 'Medium', 'High']" />
                             </v-col>
                             <v-col cols="6">
-                                <h3 class="text-h6 mb-4">Configuration</h3>
+                                <h3 class="text-xl mb-4">Configuration</h3>
                                 <v-text-field label="Budget" placeholder="Enter budget" class="mb-4" />
                                 <v-text-field label="Start Date" type="date" class="mb-4" />
                                 <v-text-field label="End Date" type="date" class="mb-4" />
@@ -290,7 +290,7 @@
                     <v-expand-transition>
                         <div v-if="showXLargeCode">
                             <v-divider />
-                            <pre class="pa-4 text-caption code-block" v-html="highlightedXLargeCode"></pre>
+                            <pre class="pa-4 text-xs code-block" v-html="highlightedXLargeCode"></pre>
                         </div>
                     </v-expand-transition>
                 </v-card-text>
@@ -299,8 +299,8 @@
 
         <!-- Overflow Dialog -->
         <div class="mb-8">
-            <h2 class="text-h5 font-weight-medium mb-4">Overflow dialogs</h2>
-            <p class="text-body-2 mb-4 text-medium-emphasis">
+            <h2 class="text-2xl font-weight-medium mb-4">Overflow dialogs</h2>
+            <p class="text-sm mb-4 text-medium-emphasis">
                 A dialog with scrollable content area when content exceeds the viewport height. Uses max-height and overflow-y for scrolling.
             </p>
 
@@ -308,7 +308,7 @@
             <v-card class="mb-4">
                 <v-card-text>
                     <div class="mb-4">
-                        <p class="text-caption font-weight-medium mb-2">Dialog with overflow content (560px width)</p>
+                        <p class="text-xs font-weight-medium mb-2">Dialog with overflow content (560px width)</p>
                         <v-btn color="primary" variant="tonal" @click="overflowDialogDemo = true">
                             Open Overflow Dialog
                         </v-btn>
@@ -321,7 +321,7 @@
                 <v-card rounded="xl">
                     <v-card-title class="d-flex align-center py-4 pr-3 pl-6">
                         <v-icon icon="mdi-file-document" class="mr-3" />
-                        <span class="text-h5">Terms and Conditions</span>
+                        <span class="text-2xl">Terms and Conditions</span>
                         <v-spacer />
                         <v-btn icon="$close" variant="text" @click="overflowDialogDemo = false" />
                     </v-card-title>
@@ -329,45 +329,45 @@
                     <v-divider />
 
                     <v-card-text class="pa-6" style="max-height: 400px; overflow-y: auto;">
-                        <h3 class="text-h6 mb-3">1. Introduction</h3>
-                        <p class="text-body-2 mb-4">
+                        <h3 class="text-xl mb-3">1. Introduction</h3>
+                        <p class="text-sm mb-4">
                             Welcome to our service. By using our platform, you agree to these terms and conditions.
                             Please read them carefully before proceeding.
                         </p>
 
-                        <h3 class="text-h6 mb-3">2. User Responsibilities</h3>
-                        <p class="text-body-2 mb-4">
+                        <h3 class="text-xl mb-3">2. User Responsibilities</h3>
+                        <p class="text-sm mb-4">
                             Users are responsible for maintaining the confidentiality of their account credentials.
                             You must notify us immediately of any unauthorized access to your account.
                         </p>
 
-                        <h3 class="text-h6 mb-3">3. Privacy Policy</h3>
-                        <p class="text-body-2 mb-4">
+                        <h3 class="text-xl mb-3">3. Privacy Policy</h3>
+                        <p class="text-sm mb-4">
                             We collect and process your personal data in accordance with applicable data protection laws.
                             Your information is used solely for providing our services and will not be shared with third parties
                             without your consent.
                         </p>
 
-                        <h3 class="text-h6 mb-3">4. Service Usage</h3>
-                        <p class="text-body-2 mb-4">
+                        <h3 class="text-xl mb-3">4. Service Usage</h3>
+                        <p class="text-sm mb-4">
                             Our service is provided "as is" without warranties of any kind. We reserve the right to modify,
                             suspend, or discontinue any part of our service at any time.
                         </p>
 
-                        <h3 class="text-h6 mb-3">5. Intellectual Property</h3>
-                        <p class="text-body-2 mb-4">
+                        <h3 class="text-xl mb-3">5. Intellectual Property</h3>
+                        <p class="text-sm mb-4">
                             All content, trademarks, and data on this platform are the property of our company or our licensors.
                             Unauthorized use is strictly prohibited.
                         </p>
 
-                        <h3 class="text-h6 mb-3">6. Limitation of Liability</h3>
-                        <p class="text-body-2 mb-4">
+                        <h3 class="text-xl mb-3">6. Limitation of Liability</h3>
+                        <p class="text-sm mb-4">
                             We shall not be liable for any indirect, incidental, or consequential damages arising from your use
                             of our service.
                         </p>
 
-                        <h3 class="text-h6 mb-3">7. Termination</h3>
-                        <p class="text-body-2 mb-4">
+                        <h3 class="text-xl mb-3">7. Termination</h3>
+                        <p class="text-sm mb-4">
                             We reserve the right to terminate or suspend your account at our discretion if you violate these terms.
                         </p>
                     </v-card-text>
@@ -395,7 +395,7 @@
                     <v-expand-transition>
                         <div v-if="showOverflowCode">
                             <v-divider />
-                            <pre class="pa-4 text-caption code-block" v-html="highlightedOverflowCode"></pre>
+                            <pre class="pa-4 text-xs code-block" v-html="highlightedOverflowCode"></pre>
                         </div>
                     </v-expand-transition>
                 </v-card-text>
@@ -404,8 +404,8 @@
 
         <!-- Single Button Dialog -->
         <div class="mb-8">
-            <h2 class="text-h5 font-weight-medium mb-4">Single action dialogs</h2>
-            <p class="text-body-2 mb-4 text-medium-emphasis">
+            <h2 class="text-2xl font-weight-medium mb-4">Single action dialogs</h2>
+            <p class="text-sm mb-4 text-medium-emphasis">
                 A dialog with a single action button, typically used for notifications or information displays.
             </p>
 
@@ -413,7 +413,7 @@
             <v-card class="mb-4">
                 <v-card-text>
                     <div class="mb-4">
-                        <p class="text-caption font-weight-medium mb-2">Dialog with single action (560px width)</p>
+                        <p class="text-xs font-weight-medium mb-2">Dialog with single action (560px width)</p>
                         <v-btn color="primary" variant="tonal" @click="singleButtonDialogDemo = true">
                             Open Single Action Dialog
                         </v-btn>
@@ -426,7 +426,7 @@
                 <v-card rounded="xl">
                     <v-card-title class="d-flex align-center py-4 pr-3 pl-6">
                         <v-icon icon="mdi-information" class="mr-3" />
-                        <span class="text-h5">System Update</span>
+                        <span class="text-2xl">System Update</span>
                         <v-spacer />
                         <v-btn icon="$close" variant="text" @click="singleButtonDialogDemo = false" />
                     </v-card-title>
@@ -434,14 +434,14 @@
                     <v-divider />
 
                     <v-card-text class="pa-6">
-                        <p class="text-body-1 mb-4">
+                        <p class="text-base mb-4">
                             A new system update is available. This update includes performance improvements,
                             security patches, and new features.
                         </p>
                         <v-alert color="info" variant="tonal" class="mb-0">
-                            <p class="text-body-2 mb-2"><strong>Version:</strong> 2.5.0</p>
-                            <p class="text-body-2 mb-2"><strong>Release Date:</strong> February 25, 2026</p>
-                            <p class="text-body-2 mb-0"><strong>Size:</strong> 125 MB</p>
+                            <p class="text-sm mb-2"><strong>Version:</strong> 2.5.0</p>
+                            <p class="text-sm mb-2"><strong>Release Date:</strong> February 25, 2026</p>
+                            <p class="text-sm mb-0"><strong>Size:</strong> 125 MB</p>
                         </v-alert>
                     </v-card-text>
 
@@ -466,7 +466,7 @@
                     <v-expand-transition>
                         <div v-if="showSingleButtonCode">
                             <v-divider />
-                            <pre class="pa-4 text-caption code-block" v-html="highlightedSingleButtonCode"></pre>
+                            <pre class="pa-4 text-xs code-block" v-html="highlightedSingleButtonCode"></pre>
                         </div>
                     </v-expand-transition>
                 </v-card-text>
@@ -498,20 +498,22 @@ const displayCodeExample = `<template>
     Open Confirmation Demo
   </v-btn>
 
-  <v-dialog v-model="dialog" width="400">
+  <v-dialog v-model="dialog" width="400" persistent>
     <v-card rounded="xl">
-      <div class="d-flex justify-center pt-4">
-        <v-icon icon="mdi-alert-circle" color="error" size="64"></v-icon>
+      <!-- Title & Message -->
+      <div class="d-flex flex-column pa-6">
+        <p class="text-xl font-weight-medium mb-2">Delete item</p>
+        <p class="text-base message-text">
+          Are you sure you want to delete this item? This action cannot be undone.
+        </p>
       </div>
-      <v-sheet class="d-flex flex-column text-center pa-4">
-        <p class="text-h6 font-weight-medium mb-2">Delete item</p>
-        <p class="text-body-2">Are you sure you want to delete this item? This action cannot be undone.</p>
-      </v-sheet>
+
+      <!-- Actions: Flexible equal width buttons -->
       <v-card-actions class="pa-4 ga-2">
-        <v-btn class="flex-grow-1" prepend-icon="mdi-close" variant="tonal" @click="dialog = false">
+        <v-btn class="confirm-cancel-btn" variant="tonal" @click="dialog = false">
           Cancel
         </v-btn>
-        <v-btn class="flex-grow-1" prepend-icon="mdi-trash-can" variant="flat" color="error" @click="dialog = false">
+        <v-btn class="confirm-primary-btn" variant="flat" color="error" @click="dialog = false">
           Delete
         </v-btn>
       </v-card-actions>
@@ -523,7 +525,26 @@ const displayCodeExample = `<template>
 import { ref } from 'vue'
 
 const dialog = ref(false)
-<\/script>`
+<\/script>
+
+<style scoped>
+.message-text {
+  white-space: pre-line;
+}
+
+/* Flexible button sizing */
+.confirm-cancel-btn {
+  flex: 1 2 0;
+  min-width: 0;
+  white-space: normal;
+}
+
+.confirm-primary-btn {
+  flex: 1 0 0;
+  min-width: 0;
+  white-space: normal;
+}
+<\/style>`
 
 // Medium size dialog code example
 const formCodeExample = `<template>
@@ -535,7 +556,7 @@ const formCodeExample = `<template>
     <v-card rounded="xl">
       <v-card-title class="d-flex align-center py-4 pr-3 pl-6">
         <v-icon icon="mdi-account-edit" class="mr-3" />
-        <span class="text-h5">Edit Profile</span>
+        <span class="text-2xl">Edit Profile</span>
         <v-spacer />
         <v-chip
           prepend-icon="mdi-book-open-variant"
@@ -589,7 +610,7 @@ const largeCodeExample = `<template>
     <v-card rounded="xl">
       <v-card-title class="d-flex align-center py-4 pr-3 pl-6">
         <v-icon icon="mdi-cog" class="mr-3" />
-        <span class="text-h5">Settings</span>
+        <span class="text-2xl">Settings</span>
         <v-spacer />
         <v-btn icon="$close" variant="text" @click="dialog = false" />
       </v-card-title>
@@ -598,13 +619,13 @@ const largeCodeExample = `<template>
 
       <v-card-text class="pa-6">
         <div class="mb-6">
-          <h3 class="text-h6 mb-4">Account Settings</h3>
+          <h3 class="text-xl mb-4">Account Settings</h3>
           <v-text-field label="Username" placeholder="Enter username" class="mb-4" />
           <v-text-field label="Email" placeholder="Enter email" class="mb-4" />
           <v-text-field label="Phone" placeholder="Enter phone number" />
         </div>
         <div class="mb-6">
-          <h3 class="text-h6 mb-4">Preferences</h3>
+          <h3 class="text-xl mb-4">Preferences</h3>
           <v-select label="Language" :items="['English', 'Japanese', 'Chinese']" class="mb-4" />
           <v-select label="Timezone" :items="['UTC', 'JST', 'PST']" class="mb-4" />
           <v-select label="Theme" :items="['Light', 'Dark', 'Auto']" />
@@ -643,7 +664,7 @@ const xlargeCodeExample = `<template>
     <v-card rounded="xl">
       <v-card-title class="d-flex align-center py-4 pr-3 pl-6">
         <v-icon icon="mdi-file-document-edit" class="mr-3" />
-        <span class="text-h5">Create New Project</span>
+        <span class="text-2xl">Create New Project</span>
         <v-spacer />
         <v-btn icon="$close" variant="text" @click="dialog = false" />
       </v-card-title>
@@ -653,14 +674,14 @@ const xlargeCodeExample = `<template>
       <v-card-text class="pa-6">
         <v-row>
           <v-col cols="6">
-            <h3 class="text-h6 mb-4">Project Details</h3>
+            <h3 class="text-xl mb-4">Project Details</h3>
             <v-text-field label="Project Name" placeholder="Enter project name" class="mb-4" />
             <v-text-field label="Project Code" placeholder="Enter project code" class="mb-4" />
             <v-select label="Category" :items="['Development', 'Design', 'Marketing']" class="mb-4" />
             <v-select label="Priority" :items="['Low', 'Medium', 'High']" />
           </v-col>
           <v-col cols="6">
-            <h3 class="text-h6 mb-4">Configuration</h3>
+            <h3 class="text-xl mb-4">Configuration</h3>
             <v-text-field label="Budget" placeholder="Enter budget" class="mb-4" />
             <v-text-field label="Start Date" type="date" class="mb-4" />
             <v-text-field label="End Date" type="date" class="mb-4" />
@@ -706,7 +727,7 @@ const overflowCodeExample = `<template>
     <v-card rounded="xl">
       <v-card-title class="d-flex align-center py-4 pr-3 pl-6">
         <v-icon icon="mdi-file-document" class="mr-3" />
-        <span class="text-h5">Terms and Conditions</span>
+        <span class="text-2xl">Terms and Conditions</span>
         <v-spacer />
         <v-btn icon="$close" variant="text" @click="dialog = false" />
       </v-card-title>
@@ -714,13 +735,13 @@ const overflowCodeExample = `<template>
       <v-divider />
 
       <v-card-text class="pa-6" style="max-height: 400px; overflow-y: auto;">
-        <h3 class="text-h6 mb-3">1. Introduction</h3>
-        <p class="text-body-2 mb-4">
+        <h3 class="text-xl mb-3">1. Introduction</h3>
+        <p class="text-sm mb-4">
           Welcome to our service. By using our platform, you agree to these terms and conditions.
         </p>
 
-        <h3 class="text-h6 mb-3">2. User Responsibilities</h3>
-        <p class="text-body-2 mb-4">
+        <h3 class="text-xl mb-3">2. User Responsibilities</h3>
+        <p class="text-sm mb-4">
           Users are responsible for maintaining the confidentiality of their account credentials.
         </p>
 
@@ -756,7 +777,7 @@ const singleButtonCodeExample = `<template>
     <v-card rounded="xl">
       <v-card-title class="d-flex align-center py-4 pr-3 pl-6">
         <v-icon icon="mdi-information" class="mr-3" />
-        <span class="text-h5">System Update</span>
+        <span class="text-2xl">System Update</span>
         <v-spacer />
         <v-btn icon="$close" variant="text" @click="dialog = false" />
       </v-card-title>
@@ -764,14 +785,14 @@ const singleButtonCodeExample = `<template>
       <v-divider />
 
       <v-card-text class="pa-6">
-        <p class="text-body-1 mb-4">
+        <p class="text-base mb-4">
           A new system update is available. This update includes performance improvements,
           security patches, and new features.
         </p>
         <v-alert color="info" variant="tonal" class="mb-0">
-          <p class="text-body-2 mb-2"><strong>Version:</strong> 2.5.0</p>
-          <p class="text-body-2 mb-2"><strong>Release Date:</strong> February 25, 2026</p>
-          <p class="text-body-2 mb-0"><strong>Size:</strong> 125 MB</p>
+          <p class="text-sm mb-2"><strong>Version:</strong> 2.5.0</p>
+          <p class="text-sm mb-2"><strong>Release Date:</strong> February 25, 2026</p>
+          <p class="text-sm mb-0"><strong>Size:</strong> 125 MB</p>
         </v-alert>
       </v-card-text>
 
@@ -824,5 +845,29 @@ const highlightedSingleButtonCode = computed(() =>
   color: #d4d4d4;
   overflow-x: auto;
   border-radius: 8px;
+}
+
+.message-text {
+  white-space: pre-line;
+}
+
+/* Flexible button sizing matching ConfirmationDialog component */
+.confirm-cancel-btn {
+  flex: 1 2 0;
+  min-width: 0;
+  white-space: normal;
+}
+
+.confirm-primary-btn {
+  flex: 1 0 0;
+  min-width: 0;
+  white-space: normal;
+}
+
+.confirm-cancel-btn :deep(.v-btn__content),
+.confirm-primary-btn :deep(.v-btn__content) {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.2;
 }
 </style>
